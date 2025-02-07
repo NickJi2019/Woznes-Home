@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>YuanRetro-Pinball</title>
+        <link rel="stylesheet" href="/style.css">
+        <script src="/jquery-3.7.1.min.js"></script>
+        <link rel="icon" href="/img/nahida.png" type="image/x-icon">
+        <style>
+            .difficulty-container {
+                display: flex;
+                flex-direction: row; /* From left to right */
+                align-items: flex-start; /* Align to the left*/
+            }
+
+            /* Game container */
+            .game-container {
+                display: flex;
+                flex-direction: column; /* From top to bottom */
+            }
+
+            /* Button container */
+            .button-row {
+                display: flex;
+                justify-content: space-between; /* Distance between the two buttons */
+                width: 400px; /* The same as the width of the canvas */
+                margin-top: 20px; /* Distance from the canvas */
+            }
+
+            #canvas {
+                width: 400px; /* Fixed height */
+                height: 400px; /* Fixed width */
+            }
+        </style>
+    </head>
+    <body class="body" id="body">
+        <nav class="navi"></nav>
+        <h1>Pinball game V2.4... Updated 2024.12.05</h1>
+        <div class="textbox-container">
+            <div class="textbox" style="width: 450px;">
+                <p>This is a small pinball game using plain javascript. You can control the panel using 'a' and 'd' or
+                    left and right arrow keys for
+                    left and right or click the buttons. This game might not work if your browser do not support
+                    Javascript. You
+                    earn 5 points each time you catch the ball using the panel, but if you fail to catch the ball, the
+                    game
+                    would be over. The game would restart after you press the button on the pop-out dialog.</p>
+                <p>Big thanks to Nille Cheng and his book 'Learn to Create Web Games Using Javascript'(ISBN
+                    978-7-115-46238-1),
+                    as the
+                    concept of this game and part of the algorithm is base on his codes in the book.</p>
+            </div>
+            <div class="textbox">
+                <div class="difficulty-container">
+                    <label for="easy">Difficulty Selection: <br/></label>
+                    <input type="checkbox" id="easy" onclick="clickCheckbox(this)"/>
+                    <label for="easy">Easy（EZ）<br/></label>
+                    <input type="checkbox" id="hard" onclick="clickCheckbox(this)"/>
+                    <label for="hard">Hard（HD）<br/></label>
+                    <input type="checkbox" id="insane" onclick="clickCheckbox(this)"/>
+                    <label for="insane">Insane（IN）<br/></label>
+                </div>
+                <input type="button" id="start" class="custom-button" value="Start!" onclick="start()"/>
+                <!-- Button to start the game -->
+                <div class="game-container">
+                    <!-- Canvas -->
+                    <canvas id="canvas" width="400" height="400"></canvas>
+
+                    <!-- Button container -->
+                    <div class="button-row">
+                        <input type="button" id="leftButton" class="custom-button" value="Left"/>
+                        <!-- Button to move to the left -->
+                        <input type="button" id="rightButton" class="custom-button" value="Right"/>
+                        <!-- Button to move to the right -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/pinball.js"></script>
+        <footer class="site-footer"></footer>
+        <script>
+            $(document).ready(function () {
+                // Load footer
+                $(".site-footer").load("./footer.html");
+                // Load navigation bar
+                $(".navi").load("./navi.html");
+            });
+        </script>
+        <script type="text/javascript" src="/footer.js"></script>
+    </body>
+</html>
