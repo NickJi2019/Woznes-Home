@@ -3,26 +3,179 @@
 
 <head>
     <title>Woznes</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/png" href="woznes.png" />
+    <link rel="stylesheet" href="index.bootstrap.css">
+    <link rel="stylesheet" href="fontawesome.css">
+    <link rel="stylesheet" href="centos-indexhtml.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>
-            nihao
-        </h1>
-        <p>
-            oui oui? oui oui oui!
+    <header class="header header__page">
+        <!-- <div class="container mb-5">
+            <a href="https://www.centos.org/"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAAgCAMAAADjeTw9AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAAlwSFlzAAAEuQAABLkBEeHNJwAAAwBQTFRFR3BMxeKC////////////////////////////////////////////////////////fn2t////////////////////////////////////////////////////////////7uDr////////9sp8x5a7////////////////////////////9tCJ////zaHA9cyDhISzxuKHyZu+////////////////////////////////////////////////29ro3t7riom2////////////+d6ugICw48rc////////////vLzV////////////////////////////////////////////////////////////////////////////99GL0+mh////+Nmf4fC+xcXb5PLG6NLi////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7/fd4vHB7vba7/fe7+Ps/fHeyuSO////iom2/PDY1rDM0qrI1bDL3O20f36ttLTP+uG1xOKAxOCCgH6v3L3U/vfr48rbt7bS3+64++rJ3sLWu7vV9frq6ury9u3z/////////////////////////////////O/ZzOWT/PDa6+vy9vvu7fbZ7vbe/fHctrbQ/fHa7u719vvt9u/1+uS9/vjs+eO49ez0uLfR++fE3ey6x8fc+ubA/PXo++a/+uS85/PJ+uS82euu7093////76ckoU+MJiV3nM0qvYOuZmWfu91u9MNq9s+H1K/Lm5rAioq20uidyuSM+Nebt9tk879fzJ/Aw4619cZyc3Oovoaw4MTYPDuFqV+W5M3ey57A+ubAW1qZtNlepNE88K42ptI/8bA5067KzaHCuHqovIGt6NTj++nJ+Naa+Nec871a9MBj9tCK5/PMkJC6lZW9zeaSycjdy8ve5vLKz+eX1RJ36QAAAOJ0Uk5TAPoI8oFbT1G7/uUXNfzKDfqpyOuiBSgCxUT3HQGo9UqRmhP7+wruPiag6Gn14fb49/j32IffpuPMEu/W3BndqKb5sPla+/j6l5Us/B8hFZ3QdnTzIIlXuLWsG1/TZnH49mj2+/39/NpjfkHCyzl5+r8RbD1hlOmGXC/PvlR4XUeLg957MU2g+ZSkmKT31PiO9vb3+/v7/vv7+/y09/f3+/r4uLG8o7ELRXJwjpOi96fIr46LkfqPxMGx+cD5s/r9+vv6u/P7+/j4/////////////////////////////////jS31HoAAASfSURBVEjHxZcHVFNXGMcvUGlIiLFkMgQilNl0gYBiqYUwFAijUiGAQlmOWvdeVWu1ww5nVdTWDmr33nufmxfaBBGFMmxd3XvP746XZY6e9pwm/5Pz3v3ufff+3vfd7977gpC7nn4E+VG3XT31MX/SLZapN/uL/izQ/cCXnUu1+0W7/YvP7Pb8l5ht9hE+eG8AqKllx44t9r72+PijrfGgXcN8hQ/o7Ow83AOXAHvfhYIgHD8Il35f4k/90unEC8e+8S3+lJv3Hx0UvvaCT0q/RimXzqyQ/bvhw/XZQRGZudMCuR04rVqaFyGd/KBMxP/+19+Uz/BA/+rbLz3xgUVyzBQ072xEVVZWOi+WzOS9sDSGOZEmVkRrGL6ph8DhR/FAh9/xY+7483XYqcqz4IdjPJKVJiqdvUJSiRfjSDElCC5rtfSRF1pY6h3uIXhGF4Sjj7uNeB88r1w5cW7SFCVOi6RVmpgY9v5obmmpGWlDg8NHeeAVBug2fIXZND85BGP5DISMUKGHx2RLwlbSR2Lb7+zk/BZ7XyGnC/3bLnehh0Lv0YwqU1FILXWjzUjK5wDDmAmmXN+B0HU5eRhfmZNTRRtwhpp2WwIjlEehKqhRsDGp87Gbhyie8Jvey2/ldKF/8AoXfhH0SnR5nSi9GNIqho/gZi5CybyYjKKkMOViypVBVSiaDtfpasc4sZuFodcvoWp6d+/ut9oLWy+l2jVovXW847E2jNNc5yKVkIzGXLitZ07iRdU6cBDPQhUSmNkUiaQSacBOdwQQjGtpGHFKRn0prbvpDkH45AOuu+6Vjbrn7g+5PrZanf5HY3yeC10LbulJAYKgY/jlENIFcF/jMvcPgG10LB0wJiC0mMembp76P+OJJ6nhoEZIaAXFLyVTAnmucsGHQ71jAXWAsRDu8yV8BZebWPBfvZiq+I09+/e//c6+i6jyzxT8FS6rEGsIfjadzyz2liLeLfizaPCJTMPKRpOOZWTybx/aaSU61G0t3vD+PkvXEXLuWgYGXeieqRcDpk7CFUnwQbQ+zB3vlnrJNPVErYZAKWnyFe7k9EPNtt43j3D+wDPjPRdeCS1elmFCZjCnOFu94GvEBjyS5fkq6LIsCqFEreNtomnhlWZO7x5h672gi/O3P+e+j8JACeuWjtEcUOK2SWgyxnn1aqQN1pm94KHVoEAwtR0kyFlXRcoSVWTbgfiVyMsbJ0Hurk6gSUs23eJuRrcSPIF3/WDpOnGGTfcASoLeOM8AGblpzOn4CnIySOu8bboP0d0+k2wTIesZvuDXP34jdIYn/J+/+37A88iZIB45Y+vBvH4ct6oVp+MV2bSJzHTkHJGeSY+cxrGiHZHKT7wC60lK53jC/9Ey4O3AXTRbOqfSRC11bU22oU5Fx6yVSO6nlQ9LJOtIyinWLF+7bCHbpGcUwYFrqFnAU7BjlWpTQkhC2OJS5MBbT/5pdeItJ36yeMH/X58bBSz1XL33JX7PCFBx89at22y9L8fFbX8tDpTvKzz/0H5ig832+ac225bnffuhLeqpBnLu3nKjv/7mPNngTzpCGxsevcGff3E3+pb+D810Duw774WAAAAAAElFTkSuQmCC"
+                    alt="CentOS Project" /></a>
+        </div> -->
+        <h1 class="header__page__title">HTTP Server Test Page</h1>
+        <p class="header__page__description">This page is used to test the proper operation of the HTTP server after it
+            has
+            been installed. If you can read this page it means that this site is working properly. This server is
+            powered by
+            <a href="http://centos.org">CentOS</a>.
         </p>
-        <h1>
-            你好
-        </h1>
-        <p>
-            你好吗？
-        </p>
+    </header>
+    <div class="hr">
+        <div class="hr__centos-color-0"></div>
+        <div class="hr__centos-color-1"></div>
+        <div class="hr__centos-color-2"></div>
+        <div class="hr__centos-color-3"></div>
     </div>
+    <main class="page">
+        <article class="page__content">
+            <div class="row">
+                <div class="col-xl-6">
+                    <h5>If you are a member of the general public:</h5>
+                    <p>The website you just visited is either experiencing problems or is undergoing routine
+                        maintenance.</p>
+                    <p>If you would like to let the administrators of this website know that you've seen this page
+                        instead of the
+                        page you expected, you should send them e-mail. In general, mail sent to the name "webmaster"
+                        and directed
+                        to the website's domain should reach the appropriate person.</p>
+                    <p>For example, if you experienced problems while visiting www.example.com, you should send e-mail
+                        to
+                        "webmaster@example.com".</p>
+                    <div class="alert alert-info" role="alert">
+                        <h5 class="alert-heading">Important Note!</h5>
+                        <p>The CentOS Project has nothing to do with this website or its content, it just provides the
+                            software that
+                            makes the website run.</p>
+                        <p>If you have issues with the content of this site, contact the owner of the domain, not the
+                            CentOS
+                            project. Unless you intended to visit CentOS.org, the CentOS Project does not have anything
+                            to do with
+                            this website, the content or the lack of it.</p>
+                        <p>For example, if this website is www.example.com, you would find the owner of the example.com
+                            domain at
+                            the following WHOIS server: <a class="alert-link"
+                                href="http://www.internic.net/whois.html">http://www.internic.net/whois.html</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <h5>If you are the website administrator:</h5>
+                    <p>You may now add content to the webroot directory. Note that until you do so, people visiting your
+                        website
+                        will see this page, and not your content.</p>
+                    <h6>For systems using the Apache HTTP Server:</h6>
+                    <p>You may now add content to the directory <code>/var/www/html/</code>. Note that until you do so,
+                        people
+                        visiting your website will see this page, and not your content. To prevent this page from ever
+                        being used,
+                        follow the instructions in the file <code>/etc/httpd/conf.d/welcome.conf</code>.</p>
+                    <p class="small"><a href="https://apache.org">Apache™</a> is a registered trademark of <a
+                            href="https://apache.org">the Apache Software Foundation</a> in the United States and/or
+                        other countries.
+                    </p>
+                    <h6>For systems using NGINX:</h6>
+                    <p>You should now put your content in a location of your choice and edit the <code>root</code>
+                        configuration
+                        directive in the <strong>nginx</strong> configuration file <code>/etc/nginx/nginx.conf</code>.
+                    </p>
+                    <p class="small"><a href="https://nginx.com">NGINX™</a> is a registered trademark of <a
+                            href="https://www.f5.com">F5 Networks, Inc.</a></p>
+                    <p><a href="https://www.centos.org/"><img src="/icons/poweredby.png"
+                                alt="[ Powered by CentOS ]" /></a> <img src="poweredby.png"
+                            alt="[ Powered by CentOS ]" /></p>
+                    <p class="small"><a href="https://www.centos.org/">CentOS</a> is a registered trademark of <a
+                            href="https://www.redhat.com/">Red Hat Inc.</a></p>
+                </div>
+            </div>
+        </article>
+    </main>
+    <div class="hr">
+        <div class="hr__centos-color-0"></div>
+        <div class="hr__centos-color-1"></div>
+        <div class="hr__centos-color-2"></div>
+        <div class="hr__centos-color-3"></div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <section class="links">
+                    <h6><i class="fas fa-info-circle"></i> About</h6>
+                    <ul>
+                        <li>
+                            <a href="/about">About CentOS</a>
+                        </li>
+                        <li>
+                            <a href="https://wiki.centos.org/FAQ">Frequently Asked Questions (FAQs)</a>
+                        </li>
+                        <li>
+                            <a href="https://wiki.centos.org/SpecialInterestGroups">Special Interest Groups (SIGs)</a>
+                        </li>
+                        <li>
+                            <a href="/variants">CentOS Variants</a>
+                        </li>
+                        <li>
+                            <a href="/about/governance">Governance</a>
+                        </li>
+                        <li>
+                            <a href="/code-of-conduct">Code of Conduct</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="links">
+                    <h6><i class="fas fa-users"></i> Community</h6>
+                    <ul>
+                        <li>
+                            <a href="https://wiki.centos.org/Contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <a href="https://www.centos.org/forums/">Forums</a>
+                        </li>
+                        <li>
+                            <a href="https://wiki.centos.org/GettingHelp/ListInfo">Mailing Lists</a>
+                        </li>
+                        <li>
+                            <a href="https://wiki.centos.org/irc">IRC</a>
+                        </li>
+                        <li>
+                            <a href="/community/calendar/">Calendar &amp; IRC Meeting List</a>
+                        </li>
+                        <li>
+                            <a href="http://planet.centos.org/">Planet</a>
+                        </li>
+                        <li>
+                            <a href="https://wiki.centos.org/ReportBugs">Submit Bug</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="project">
+                    <h2>The CentOS Project</h2>
+                    <p class="lead">Community-driven free software effort focused on delivering a robust open source
+                        ecosystem
+                        around a Linux platform.</p>
+                    <div class="lead social">
+                        <a href="https://www.facebook.com/groups/centosproject/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/CentOS"><i class="fab fa-twitter"></i></a> <a
+                            href="https://youtube.com/TheCentOSProject"><i class="fab fa-youtube"></i></a> <a
+                            href="https://www.linkedin.com/groups/22405"><i class="fab fa-linkedin"></i></a> <a
+                            href="https://www.reddit.com/r/CentOS/"><i class="fab fa-reddit"></i></a>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section class="copyright">
+                    <p>Copyright © 2021 The CentOS Project | <a href="/legal">Legal</a> | <a
+                            href="/legal/privacy">Privacy</a> |
+                        <a href="https://git.centos.org/centos/centos.org">Site source</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
