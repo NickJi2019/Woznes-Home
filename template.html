@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 <!--语言-->
-<html lang="zh-CN">
+<html lang="">
 
 <head>
     <!--网页标题-->
-    <title>404</title>
+    <title></title>
 
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -15,23 +15,11 @@
     <script src="/utils/bootstrap4.js"></script>
     <link href="/utils/bootstrap4.centos.css" rel="stylesheet">
     <link href="/utils/fontawesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="/common.css">
 
     <script>
-        let titles = ['Page not found', '页面未找到', 'Page non trouvée', 'ページが見つかりません']
-        var i=1
-        async function switchTitle(){
-            let title = $(".header__page__description")
-            await title.fadeTo("fast",0).promise()
-            title.text(titles[i%titles.length])
-            await title.fadeTo("fast",1).promise()
-            i++
-        }
-
         $(document).ready(function () {
-            $('#navibar').load('/navibar.html');
-            $('#footer').load('/footer.html');
-            setInterval(switchTitle,2500)
+            $("#footer").load("/footer.html");
+            $("#navibar").load("/navibar.html");
         })
     </script>
 </head>
@@ -47,12 +35,12 @@
 
     <!--页面标题-->
     <h1 class="header__page__title">
-        404 Not Found
+
     </h1>
 
     <!--副标题-->
     <p class="header__page__description">
-        Page not found
+
     </p>
 
 </header>
@@ -76,21 +64,6 @@
 
         <!---->
         <div class="row">
-            <div class="col">
-                <div class="alert alert-info" role="alert">
-                    <h5 class="alert-heading">重要</h5>
-                    <h6>HTTP 404 – Not Found</h6>
-                    <p>
-                        服务器未能找到请求的资源，这可能是由于 URL 输入错误，或页面已被移除。
-                        请返回主页或联系管理员。
-                    </p>
-                </div>
-            </div>
-            <div class="col">
-                <p>
-                    <a href="/"><i class="fas fa-home"></i> 返回首页</a>
-                </p>
-            </div>
         </div>
     </article>
 </main>

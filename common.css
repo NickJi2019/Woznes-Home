@@ -1,0 +1,10 @@
+.navbar-brand, .nav-item{
+    text-shadow: 0 0 15px #000000;
+}
+.navbar{
+    background: rgba(255, 255, 255, 0.0);
+    backdrop-filter: blur(10px);
+}
+.navbar .navbar-nav, .navbar .navbar-nav .nav-link{
+    color: #FFFFFF;
+}
